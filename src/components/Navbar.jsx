@@ -22,15 +22,11 @@ const Navbar = () => {
 
   const listVariants = {
     hidden: {},
-    visible: {
-      transition: {
-        staggerChildren: 0.1,
-      },
-    },
+    visible: { transition: { staggerChildren: 0.15 } },
   };
 
   const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
+    hidden: { opacity: 0, y: -10 },
     visible: { opacity: 1, y: 0 },
   };
 
@@ -51,17 +47,34 @@ const Navbar = () => {
         flexDirection: "column",
         alignItems: "center",
         justifyContent: "center",
-        zIndex: 1300, // make sure it’s above AppBar
+        zIndex: 1300,
       }}
       onClick={handleDrawerToggle}
     >
       <Typography variant="h6" sx={{ mb: 4 }}>
-        <Link to="/">
+        <Link
+          to="/"
+          style={{
+            display: "flex",
+            alignItems: "center",
+            textDecoration: "none",
+            color: "#fff",
+          }}
+        >
           <img
-            src="/logo.png"
+            src="logo.png"
             alt="Logo"
             style={{ height: "50px", objectFit: "contain" }}
           />
+          <span
+            style={{
+              marginLeft: "8px",
+              fontSize: "1.2rem",
+              fontWeight: "bold",
+            }}
+          >
+            ADP Constructions
+          </span>
         </Link>
       </Typography>
 
@@ -97,22 +110,50 @@ const Navbar = () => {
         }}
       >
         <Toolbar sx={{ px: { xs: 1, sm: 2 } }}>
-          {/* Logo */}
-          <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-            <Link to="/">
-              <img
-                src="/logo.png"
-                alt="Logo"
+          {/* Logo with Company Name */}
+          <motion.div
+            initial={{ opacity: 0, x: -50 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 1 }}
+            style={{ flexGrow: 1 }}
+          >
+            <Typography
+              variant="h6"
+              component="div"
+              sx={{ display: "flex", alignItems: "center" }}
+            >
+              <Link
+                to="/"
                 style={{
-                  height: "40px",
-                  maxHeight: "50px",
-                  objectFit: "contain",
+                  display: "flex",
+                  alignItems: "center",
+                  textDecoration: "none",
+                  color: "#fff",
                 }}
-              />
-            </Link>
-          </Typography>
+              >
+                <img
+                  src="/logo.png"
+                  alt="Logo"
+                  style={{
+                    height: "40px",
+                    maxHeight: "50px",
+                    objectFit: "contain",
+                  }}
+                />
+                <span
+                  style={{
+                    marginLeft: "8px",
+                    fontSize: "1.2rem",
+                    fontWeight: "bold",
+                  }}
+                >
+                  ADP Constructions
+                </span>
+              </Link>
+            </Typography>
+          </motion.div>
 
-          {/* Desktop Links */}
+          {/* Desktop Links (md and above) */}
           <Box
             sx={{
               display: { xs: "none", md: "flex" },
@@ -120,30 +161,58 @@ const Navbar = () => {
               alignItems: "center",
             }}
           >
-            {navItems.map((item) => (
-              <Link
-                key={item.to}
-                to={item.to}
-                style={{
-                  color: "#fff",
-                  textDecoration: "none",
-                  fontSize: "0.95rem",
-                  padding: "8px 12px",
-                  borderRadius: "6px",
-                }}
-              >
-                {item.label}
-              </Link>
-            ))}
+            <motion.div
+              initial="hidden"
+              animate="visible"
+              variants={listVariants}
+              style={{
+                display: "flex",
+                gap: "16px",
+                alignItems: "center",
+              }}
+            >
+              {navItems.map((item) => (
+                <motion.div
+                  key={item.to}
+                  variants={itemVariants}
+                  style={{ display: "flex", flexDirection: "column" }}
+                >
+                  <Link
+                    to={item.to}
+                    style={{
+                      color: "#fff",
+                      textDecoration: "none",
+                      fontSize: "0.95rem",
+                      padding: "8px 12px",
+                      borderRadius: "60px",
+                      transition: "background-color 0.3s, color 0.3s",
+                      backgroundColor:
+                        item.label === "Contact" ? "#0d6efd" : "transparent",
+                    }}
+                    onMouseEnter={(e) => {
+                      if (item.label === "Contact") {
+                        e.currentTarget.style.backgroundColor = "#0d6efd";
+                      } else {
+                        e.currentTarget.style.backgroundColor = "#EF9B0F";
+                      }
+                      e.currentTarget.style.color = "#fff";
+                    }}
+                    onMouseLeave={(e) => {
+                      e.currentTarget.style.backgroundColor =
+                        item.label === "Contact" ? "#0d6efd" : "transparent";
+                      e.currentTarget.style.color = "#fff";
+                    }}
+                  >
+                    {item.label}
+                  </Link>
+                </motion.div>
+              ))}
+            </motion.div>
           </Box>
 
           {/* Mobile Menu Button */}
           <IconButton
-            sx={{
-              display: { md: "none" },
-              color: "#fff",
-              p: 1,
-            }}
+            sx={{ display: { md: "none" }, color: "#fff", p: 1 }}
             onClick={handleDrawerToggle}
           >
             <MenuIcon fontSize="large" />

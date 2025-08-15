@@ -22,8 +22,6 @@ const ContactUs = () => {
           <p className="text-gray-300 mb-10 leading-relaxed px-2 sm:px-4">
             
           </p>
-
-          {/* Contact Info Cards */}
           <div className="grid gap-6 sm:grid-cols-2 text-left max-w-3xl mx-auto mb-12">
             {[
               { icon: <FiUser className="text-xl text-green-400" />, label: "Name", value: "ADP Constructions" },
