@@ -110,7 +110,7 @@ const Navbar = () => {
         }}
       >
         <Toolbar sx={{ px: { xs: 1, sm: 2 } }}>
-          {/* Logo with Company Name */}
+         
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
@@ -153,7 +153,6 @@ const Navbar = () => {
             </Typography>
           </motion.div>
 
-          {/* Desktop Links (md and above) */}
           <Box
             sx={{
               display: { xs: "none", md: "flex" },
@@ -210,7 +209,7 @@ const Navbar = () => {
             </motion.div>
           </Box>
 
-          {/* Mobile Menu Button */}
+  
           <IconButton
             sx={{ display: { md: "none" }, color: "#fff", p: 1 }}
             onClick={handleDrawerToggle}
@@ -220,7 +219,6 @@ const Navbar = () => {
         </Toolbar>
       </AppBar>
 
-      {/* Fullscreen Mobile Menu */}
       {mobileOpen && drawer}
     </>
   );

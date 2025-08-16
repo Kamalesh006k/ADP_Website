@@ -1,7 +1,7 @@
 import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { EffectCoverflow, Pagination, Autoplay } from "swiper/modules";
-import ContactForm from "../components/ContactForm"; // <-- import here
+import ContactForm from "../components/ContactForm"; 
 
 import "swiper/css";
 import "swiper/css/effect-coverflow";
@@ -10,18 +10,19 @@ import "swiper/css/pagination";
 const Home = () => {
   return (
     <div className="bg-container">
-      {/* Glass overlay */}
+      
       <div className="bg-overlay"></div>
 
-      {/* Main content */}
       <div className="content">
-        {/* Your "View Project" section */}
+    
         <section style={{ padding: "2rem", textAlign: "center" }}>
-          <h1>ADP Constructions Welcomes You</h1>
-          <p>ISO Certified</p>
+          <h1>Building Your Dream Home in Chennai With Unmatched Excellence</h1>
+          <p>ADP Construction: Leading builders in Chennai offering expert architecture, interior design, and  renovation services</p>
         </section>
 
-        {/* Carousel section */}
+        <button>Contact us for a Free Consultation</button>
+
+     
         <Swiper
           effect={"coverflow"}
           grabCursor={true}
@@ -82,9 +83,6 @@ const Home = () => {
           </SwiperSlide>
         </Swiper>
 
-        {/* Contact Form section */}
-
-        {/* Contact Form section */}
         <section style={{ padding: "2rem", textAlign: "center" }}>
           <h2
             style={{ marginBottom: "1rem", color: "#fff", fontSize: "1.8rem" }}

@@ -10,8 +10,8 @@ const ServiceCard = ({ icon, title, description }) => {
     >
       <Card
         sx={{
-          width: 240,  // fixed width
-          height: 260, // fixed height
+          width: 240, 
+          height: 260, 
           m: 2,
           textAlign: "center",
           borderRadius: "12px",

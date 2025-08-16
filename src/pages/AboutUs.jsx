@@ -41,11 +41,11 @@ const AboutUs = () => {
                   p: 3,
                   borderRadius: "12px",
                   backgroundColor: "rgba(255,255,255,0.55)",
-                  minHeight: "220px", // equal height
+                  minHeight: "220px", 
                   display: "flex",
                   flexDirection: "column",
                   justifyContent: "center",
-                  alignItems: "center", // centers content horizontally
+                  alignItems: "center", 
                   textAlign: "center",
                   transition: "transform 0.3s, box-shadow 0.3s",
                   "&:hover": {

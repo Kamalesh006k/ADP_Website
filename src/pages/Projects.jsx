@@ -6,7 +6,7 @@ const projects = [
   { title: "Residential Villa 1", category: "Residential", image: "/assets/project1.jpg", duration: "12 months", cost: "₹1.5 Cr", location: "Chennai", area: "4000 sqft" },
   { title: "Commercial Complex", category: "Commercial", image: "/assets/project2.jpg", duration: "18 months", cost: "₹5 Cr", location: "Bangalore", area: "15000 sqft" },
   { title: "Joint Villa Project 1", category: "Joint Villas", image: "/assets/project3.jpg", duration: "14 months", cost: "₹3 Cr", location: "Hyderabad", area: "5000 sqft" },
-  // Add remaining projects here
+  
 ];
 
 const Projects = () => {

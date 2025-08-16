@@ -9,7 +9,7 @@ const ContactForm = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    alert("Message submitted!"); // replace with API call later
+    alert("Message submitted!"); 
     setFormData({ name: "", email: "", message: "" });
   };
 

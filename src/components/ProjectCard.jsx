@@ -13,7 +13,7 @@ const ProjectCard = ({ image, title, duration, cost, location, area }) => {
           maxWidth: 345,
           m: 2,
           borderRadius: "12px",
-          backgroundColor: "rgba(255,255,255,0.55)", // brighter transparent
+          backgroundColor: "rgba(255,255,255,0.55)", 
           transition: "transform 0.3s, box-shadow 0.3s",
           "&:hover": {
             transform: "translateY(-5px)",

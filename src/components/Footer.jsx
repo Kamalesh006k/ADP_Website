@@ -8,8 +8,8 @@ const Footer = () => {
       sx={{
         width: "100%",
         minHeight: "180px",
-        backgroundColor: "rgba(0,0,0,0.5)", // semi-transparent black
-        backdropFilter: "blur(10px)", // glass effect
+        backgroundColor: "rgba(0,0,0,0.5)", 
+        backdropFilter: "blur(10px)", 
         display: "flex",
         flexDirection: "column",
         justifyContent: "space-between",
@@ -22,7 +22,7 @@ const Footer = () => {
         textAlign: "center",
       }}
     >
-      {/* Contact Info */}
+    
       <Box sx={{ mb: 3 }}>
         <Typography variant="body2" sx={{ mb: 2 }}>
           <Link href="mailto:info@adpconstructions.com" color="inherit">

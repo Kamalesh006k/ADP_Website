@@ -5,7 +5,7 @@ import { FiMail, FiMapPin, FiUser, FiGlobe } from "react-icons/fi";
 const ContactUs = () => {
   return (
     <div className="bg-container min-h-screen relative">
-      {/* Glass overlay */}
+    
       <div className="bg-overlay"></div>
 
       <div className="content flex flex-col items-center justify-center px-4 sm:px-6 lg:px-8 py-16">
